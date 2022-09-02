@@ -1,70 +1,28 @@
-# Getting Started with Create React App
+# Getting Started
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The purpose fo this demo is to provide proof of concept of the design token pipeline from Figma to Github.
 
-## Available Scripts
+## Technologies Used:
+* [Figma Tokens](https://docs.figmatokens.com/)
+* [Style Dictionary](https://amzn.github.io/style-dictionary/#/)
+* [Styled System](https://styled-system.com/) with [Emotion](https://github.com/emotion-js/emotion)
 
-In the project directory, you can run:
+## Steps
+### 1. Create or import tokens in Figma Tokens plug-in
+### 2. Push changes to git repository
+Figma Tokens plug-in is synced to this repository via a Personal Access Token. Figma tokens are stored in `data/tokens.json` and pushed to the default `tokens` branch.
+### 3. Translate Figma Tokens file into something Style Dictionary can understand
+To do so, we use the [token-transformer](https://www.npmjs.com/package/token-transformer) package. From the project directory, run  `node node-modules/token-transformer data/tokens.json style-dict/tokens/output.json`
+### 4. Build our style dictionary
+To do so, run `style-dictionary build`. See [style dictionary docs](https://amzn.github.io/style-dictionary/#/) for more information.
+### 5. Use tokens in js via Styled-System provided themes!**
 
-### `npm start`
+**More work needs to be done to configure output json from style dictionary into styled-system theme json. Currently only color works as expected.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Future Steps
+* Work on configuring styled-system need-json from style dictionary outputs
+* Automated scripts to make the process of transforming files more seamless
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Set up React App
+1. `npm ci` to install needed npm packages
+2. `npm start`to open the application in localhost
