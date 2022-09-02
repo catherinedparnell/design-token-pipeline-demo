@@ -1,4 +1,4 @@
-# Getting Started
+# Design Token Pipeline Demo
 
 The purpose fo this demo is to provide proof of concept of the design token pipeline from Figma to Github.
 
