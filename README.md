@@ -11,7 +11,7 @@ The purpose of this demo is to provide proof of concept for the design token pip
 ### 1. Create or import tokens in Figma Tokens plug-in
 You can also pull existing tokens from this git repository.
 ### 2. Push changes to git repository
-Figma Tokens plug-in is synced to this repository via a Personal Access Token. Figma tokens are stored in `data/tokens.json` and pushed to the default `tokens` branch. This git repository is the only "source of truth".
+The [Figma Tokens plug-in](https://docs.figmatokens.com/) is synced to this repository via a Personal Access Token. Figma tokens are stored in `data/tokens.json` and pushed to the default `tokens` branch. This git repository is the only "source of truth".
 ### 3. Translate Figma Tokens file into something Style Dictionary can understand
 To do so, we use the [token-transformer](https://www.npmjs.com/package/token-transformer) package. From the project directory, run  `node node-modules/token-transformer data/tokens.json style-dict/tokens/output.json`
 ### 4. Build our style dictionary
